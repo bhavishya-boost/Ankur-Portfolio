@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankur Varshney | Product Manager - Solar & BESS Solutions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #d97706;
+            --accent-light: #fef3c7;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            padding: 9rem 5% 5rem 5%;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .badge {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header h2 {
+            font-size: 1.3rem;
+            color: #cbd5e1;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+
+        .contact-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-bar a:hover {
+            color: var(--accent);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #b45309;
+        }
+
+        .btn-secondary {
+            border: 1px solid #475569;
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+
+        .timeline {
+            position: relative;
+            border-left: 2px solid #e2e8f0;
+            padding-left: 2rem;
+            margin-left: 1rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.55rem;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--white);
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .company {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .date-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            padding-left: 1.2rem;
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .skill-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-group h4 {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            color: #334155;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #cbd5e1;
+        }
+
+        .award-card {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .award-icon {
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 1.5rem;
+            padding: 1rem;
+            border-radius: 50%;
+        }
+
+        .national-award {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            header h1 { font-size: 2.2rem; }
+            .timeline { padding-left: 1rem; margin-left: 0; }
+            .timeline-item::before { left: -1.55rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ANKUR <span>VARSHNEY</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education & Awards</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="badge">13+ Years Progressive Leadership</div>
+        <h1>Ankur Varshney</h1>
+        <h2>Product Manager — Solar Power Systems & BESS Solutions</h2>
+        
+        <div class="contact-bar">
+            <div><i class="fa-solid fa-location-dot"></i> Jodhpur, Rajasthan, India</div>
+            <div><i class="fa-solid fa-phone"></i> +91-7503426519</div>
+            <div><i class="fa-solid fa-envelope"></i> varshneyankur7@gmail.com</div>
+            <div><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/ankur-varshney-4384155a/" target="_blank">linkedin.com/in/ankur-varshney-4384155a/</a></div>
+        </div>
+
+        <div class="btn-group">
+            <a href="mailto:varshneyankur7@gmail.com" class="btn btn-primary">Get In Touch</a>
+            <a href="https://www.linkedin.com/in/ankur-varshney-4384155a/" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h3 class="section-title">Professional Summary</h3>
+        <div class="card">
+            <p>Dynamic, growth-driven Product Manager with over 13+ years of progressive leadership spanning Renewable Energy (Solar Rooftop, BESS Solutions), Power, Construction Materials, FMEG, and FMCG sectors. Proven track record of spearheading regional business operations, driving Regional Revenue Growth, expanding multi-tier distribution networks, and accelerating market share expansion across competitive territories. Expertise in leading cross-functional teams, orchestrating multi-channel go-to-market strategies, executing high-impact GTM launches, and cultivating high-value stakeholder relationships with EPCs, institutional clients, architects, and key trade partners.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h3 class="section-title">Professional Experience</h3>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="job-title">Product Manager (Solar Power System)</div>
+                <div class="company">V-Guard Industries Limited</div>
+                <div class="date-location">Aug 2022 – Present | Branch-Jodhpur, Rajasthan, India</div>
+                <ul>
+                    <li>Spearheaded full product lifecycle and GTM strategies for Rooftop Solar, Off-Grid Solar, and BESS, capturing regional market share and driving consistent revenue growth.</li>
+                    <li>Analyzed market trends, competitor benchmarks, and regulatory policies to define product positioning, pricing models, and strategic expansion across Western Rajasthan.</li>
+                    <li>Scaled product adoption by building an ecosystem of 45+ strategic distributors and EPC contractors, significantly expanding distribution coverage and product availability.</li>
+                    <li>Gathered end-user and field requirements to build a structured product feedback loop, directly driving feature prioritization and product reliability enhancements.</li>
+                    <li>Collaborated with Supply Chain, Engineering, Logistics, and Finance to streamline fulfillment cycles, reduce lead times, and optimize customer experience.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Chief Officer – Sales & Business Development</div>
+                <div class="company">Asian Paints Limited</div>
+                <div class="date-location">Oct 2018 – Jul 2022 | Rajasthan, India</div>
+                <ul>
+                    <li>Managed end-to-end sales operations and strategic business development for the Home Improvement and Construction Division across assigned territories.</li>
+                    <li>Built and nurtured robust influencer networks comprising CCC Firm, 100+ Architects, Interior Designers (AIDs), Contractors, and Plumbers establishing strong product prescription models.</li>
+                    <li>Directed high-value Project Sales, liaising with real estate builders, commercial contractors, and institutional buyers to secure major project contracts.</li>
+                    <li>Delivered consistent Primary and Secondary Sales targets through rigorous demand forecasting, distributor inventory management, and trade promotional activities.</li>
+                    <li>Organized over 50+ contractor meets, technical workshops, and customer engagement events, driving brand mindshare and product trial.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Sales Officer</div>
+                <div class="company">Ruchi Soya Industries Limited</div>
+                <div class="date-location">Feb 2014 – Sep 2018 | Rajasthan, India</div>
+                <ul>
+                    <li>Supervised sales and distribution operations for FMCG portfolios, consistently driving double-digit revenue growth and volume expansion across assigned territories.</li>
+                    <li>Expanded urban and rural distribution footprints by onboarding 40+ new tier-2/3 distributors and driving retail outlet reach by 25%.</li>
+                    <li>Optimized primary supply chain planning, maintaining zero-stockout levels across key distributor points while accelerating secondary sales turnover.</li>
+                    <li>Executed aggressive Trade Marketing schemes, retailer incentive campaigns, and point-of-sale merchandising (POSM) strategies to maximize visual dominance.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Online Sales Executive</div>
+                <div class="company">Religare Health Insurance Company Pvt. Ltd.</div>
+                <div class="date-location">Jul 2013 – Feb 2014 | Noida, India</div>
+                <ul>
+                    <li>Managed inbound and outbound digital lead conversion for health insurance portfolios through consultative, solution-oriented selling techniques.</li>
+                    <li>Consistently achieved 115%+ monthly target attainment through effective lead management, objection handling, and policy structuring.</li>
+                    <li>Educated prospective clients on complex policy terms, coverage tiers, and claim settlement processes, ensuring high conversion rates and customer satisfaction.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h3 class="section-title">Key Projects & Accomplishments</h3>
+        <div class="grid-2">
+            <div class="card">
+                <h4>Product Growth & Market Expansion</h4>
+                <p><strong>V-Guard:</strong> Spearheaded the product strategy and regional deployment of commercial and residential Rooftop Solar and BESS solutions across Western Rajasthan. Established V-Guard as a preferred brand through targeted GTM execution, driving significant business growth and market penetration.</p>
+            </div>
+            <div class="card">
+                <h4>Contractor Connect Channel Transformation</h4>
+                <p><strong>Asian Paints:</strong> Structured and launched an institutional contractor engagement framework, onboarding 500+ trade influencers and elevating project sales contribution.</p>
+            </div>
+            <div class="card">
+                <h4>Territory Distribution Expansion</h4>
+                <p><strong>Ruchi Soya:</strong> Engineered a rural-urban network expansion initiative that opened 40+ new distributor locations and expanded retail reach by 25%.</p>
+            </div>
+            <div class="card">
+                <h4>GTM Execution for Advanced Inverter-Battery Systems</h4>
+                <p>Managed commercial rollout of next-gen energy backup systems, driving rapid product adoption through targeted BTL launches and distributor incentive programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h3 class="section-title">Technical Skills & Domain Expertise</h3>
+        <div class="card">
+            <div class="skill-group">
+                <h4>Domain Expertise</h4>
+                <div class="tags">
+                    <span class="tag">Solar Rooftop Systems</span>
+                    <span class="tag">Battery Energy Storage Systems (BESS)</span>
+                    <span class="tag">Off Grid Solar</span>
+                    <span class="tag">Inverters & Batteries</span>
+                    <span class="tag">Stabilizers</span>
+                    <span class="tag">Construction Materials</span>
+                    <span class="tag">FMEG</span>
+                    <span class="tag">FMCG Distribution</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h4>Sales & Business Software</h4>
+                <div class="tags">
+                    <span class="tag">CRM Tools</span>
+                    <span class="tag">SAP Module</span>
+                    <span class="tag">Sales Force Automation (SFA) Apps</span>
+                    <span class="tag">Lead Management Systems</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h4>Data Analytics & Tools</h4>
+                <div class="tags">
+                    <span class="tag">Sales Analytics</span>
+                    <span class="tag">Demand Forecasting</span>
+                    <span class="tag">Territory Mapping</span>
+                    <span class="tag">Advanced MS Excel</span>
+                    <span class="tag">MS Office Suite</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h4>Languages</h4>
+                <div class="tags">
+                    <span class="tag">Hindi (Native / Full Professional)</span>
+                    <span class="tag">English (Professional Working)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h3 class="section-title">Education & Honors</h3>
+        
+        <div class="grid-2" style="margin-bottom: 2rem;">
+            <div class="card award-card national-award">
+                <div class="award-icon"><i class="fa-solid fa-trophy"></i></div>
+                <div>
+                    <h4>National Recognition Award (2004)</h4>
+                    <p style="font-size: 0.9rem; color: #78350f;"><strong>12th National Children's Science Congress</strong><br>Honoured at the national level by <strong>Dr. A.P.J. Abdul Kalam Sir</strong>, former President of India, for outstanding achievement in NCSC.</p>
+                </div>
+            </div>
+
+            <div class="card award-card">
+                <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+                <div>
+                    <h4>Corporate Awards</h4>
+                    <ul style="font-size: 0.85rem; padding-left: 1rem;">
+                        <li><strong>Best Emerging Division Award (FY 24-25)</strong> – V-Guard</li>
+                        <li><strong>Best Responsible Employee Award (FY 23-24)</strong> – V-Guard</li>
+                        <li><strong>Rising Star Award (FY 19-20)</strong> – Asian Paints</li>
+                        <li><strong>Highest Sales in Rajasthan (FY 17-18)</strong> – Ruchi Soya</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h4>Educational Qualifications</h4>
+            <br>
+            <div class="grid-2">
+                <div>
+                    <strong>MBA - Marketing</strong><br>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Mahamaya Technical University, Noida (2013)</span>
+                </div>
+                <div>
+                    <strong>Bachelor of Science (B.Sc.)</strong><br>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">MJPRU, Bareilly (2011)</span>
+                </div>
+                <div>
+                    <strong>Diploma in Computer Application</strong><br>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Centre For Software Education & Training (2011)</span>
+                </div>
+                <div>
+                    <strong>Class XII & Class X (UP Board)</strong><br>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Uttar Pradesh Board (2008 & 2006)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Ankur Varshney — Product Manager | Jodhpur, Rajasthan, India</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #94a3b8;">Declaration: Information furnished above is accurate as per official records.</p>
+    </footer>
+
+</body>
+</html>
